@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Detectar si estamos ejecutando desde una instalación
+if [ -d "/usr/local/share/cpyfut" ]; then
+
+    PROJECT_DIR="/usr/local/share/cpyfut"
+    LIB_DIR="$PROJECT_DIR/lib"
+
+else
+
+    PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+    LIB_DIR="$PROJECT_DIR/src/lib"
+
+fi
+
+ASSETS_DIR="$PROJECT_DIR/assets"
+
+source "$LIB_DIR/ascii.sh"
+source "$LIB_DIR/utils.sh"
+source "$LIB_DIR/clubs.sh"
+source "$LIB_DIR/colors.sh"
+source "$LIB_DIR/carousel.sh"
+
+if [[ "$1" == "--list" ]]; then
+
+    list_clubs
+
+    exit 0
+
+fi
+
+
+if [ $# -eq 0 ]; then
+
+    info "CPYFut"
+
+    echo "Uso:"
+    echo "    cpyfut <club>"
+
+    exit 0
+
+fi
+
+club="$1"
+
+if [[ "$2" == "--colors" ]]; then
+
+    if club_exists "$club"; then
+        show_ascii_colors "$(club_file "$club")" 0
+        exit 0
+    fi
+
+fi
+
+
+if club_exists "$club"; then
+
+    show_ascii "$(club_file "$club")"
+
+else
+
+    error "El club '$club' no existe."
+
+fi
+
+if [[ "$1" == "--carousel" ]]; then
+
+    if [[ "$2" == "--colors" ]]; then
+        carousel true
+    else
+        carousel false
+    fi
+
+    exit 0
+
+fi
