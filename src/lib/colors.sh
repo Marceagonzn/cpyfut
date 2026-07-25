@@ -47,7 +47,13 @@ show_ascii_colors() {
 
             done < "$file"
 
-            sleep 0.08
+            read -rsn1 -t 0.08 key
+
+	    if [[ "$key" == "q" ]]; then
+                tput cnorm
+                clear
+                return
+            fi
 
             # Si duration = 0 -> infinito
             if [[ "$duration" != "0" ]]; then

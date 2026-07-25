@@ -15,8 +15,19 @@ carousel() {
             else
 
                 clear
-                show_ascii "$file"
-                sleep 5
+		show_ascii "$file"
+
+			for ((i=0; i<50; i++)); do
+
+    				read -rsn1 -t 0.1 key
+
+    				if [[ "$key" == "q" ]]; then
+        				clear
+        				return
+    				fi
+
+			done
+                
 
             fi
 

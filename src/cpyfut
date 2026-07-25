@@ -20,6 +20,8 @@ source "$LIB_DIR/utils.sh"
 source "$LIB_DIR/clubs.sh"
 source "$LIB_DIR/colors.sh"
 source "$LIB_DIR/carousel.sh"
+source "$LIB_DIR/menu.sh"
+
 
 if [[ "$1" == "--list" ]]; then
 
@@ -32,14 +34,12 @@ fi
 
 if [ $# -eq 0 ]; then
 
-    info "CPYFut"
-
-    echo "Uso:"
-    echo "    cpyfut <club>"
+    show_menu
 
     exit 0
 
 fi
+
 
 club="$1"
 
