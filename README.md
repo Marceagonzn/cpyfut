@@ -3,7 +3,7 @@
 > Paraguayan football clubs in ASCII Art for Linux terminals.
 
 <p align="center">
-  <img src="screenshots/carousel.gif" alt="CPYFut Demo" width="700">
+  <img src="screenshots/olimpiaporteno.gif" alt="CPYFut Demo" width="700">
 </p>
 
 
