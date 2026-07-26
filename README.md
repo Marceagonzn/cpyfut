@@ -33,6 +33,10 @@ cd cpyfut
 sudo ./install.sh
 ```
 
+## 💻 Uso
+```bash
+./src/cpyfut
+```
 ---
 
 
