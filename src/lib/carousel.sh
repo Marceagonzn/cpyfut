@@ -6,11 +6,16 @@ carousel() {
 
     while true; do
 
-        for file in "$ASSETS_DIR"/*.txt; do
+          for file in "$ASSETS_DIR"/clubs/*.txt; do
 
             if [[ "$animated" == "true" ]]; then
 
                 show_ascii_colors "$file" 5
+
+		if [[ $? -ne 0 ]]; then
+    			clear
+    			return
+		fi
 
             else
 

@@ -52,7 +52,7 @@ show_ascii_colors() {
 	    if [[ "$key" == "q" ]]; then
                 tput cnorm
                 clear
-                return
+                return 1
             fi
 
             # Si duration = 0 -> infinito

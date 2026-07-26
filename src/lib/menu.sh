@@ -24,7 +24,7 @@ tput setaf 2
 # Mostrar el banner
 while IFS= read -r line; do
     echo "$line"
-done < "$ASSETS_DIR/myname.txt"
+done < "$ASSETS_DIR/banner/myname.txt"
 
 tput sgr0
 

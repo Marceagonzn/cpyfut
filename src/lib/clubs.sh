@@ -10,7 +10,7 @@ club_exists() {
 
 club_file() {
 
-    echo "$ASSETS_DIR/$1.txt"
+     echo "$ASSETS_DIR/clubs/$1.txt"
 
 }
 
